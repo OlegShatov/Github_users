@@ -37,6 +37,15 @@ export default {
       selectedusers: []
     }
   },
+  watch: {
+    selectedusers: {
+      handler() {
+        console.log('Selectedusers changed!');
+        localStorage.setItem('selectedusers', JSON.stringify(this.selectedusers));
+      },
+      deep: true,
+    },
+  },
   mounted() {
     fetch("https://api.github.com/users")
       .then((response) => response.json())
