@@ -33,8 +33,9 @@ export default {
 
   data() {
     return {
-      users: []
-    };
+      users: [],
+      selectedusers: []
+    }
   },
   mounted() {
     fetch("https://api.github.com/users")
